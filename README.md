@@ -51,7 +51,11 @@ src/
 │   │   ├── FormField.tsx   # Accessible label + aria-describedby + role="alert" errors
 │   │   └── inputs.tsx      # Shared TextInput / SelectInput / CheckboxInput
 │   └── forms/
-│       ├── OnboardingForm.tsx   # Wizard, useForm + useFieldArray, submit handling
+│       ├── OnboardingForm.tsx   # Wizard orchestrator: one useForm, step routing, submit handling
+│       ├── WizardNavigation.tsx # Back / Next / Submit controls
+│       ├── steps/               # One component per step, each receiving the shared form instance
+│       │   ├── shared.ts, PersonalOrganizationStep.tsx, AddressesStep.tsx,
+│       │   ├── TeamPreferencesStep.tsx, ReviewStep.tsx
 │       └── SubmissionList.tsx   # Optimistic-aware list rendering
 ├── hooks/
 │   ├── useMultiStepForm.ts         # Step index, derived first/last flags
